@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_restaurant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.beardev.findrestaurant.RestaurantActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="7dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/backgroundWhite">
+
+            <TextView
+                android:textColor="@color/colorPrimaryText"
+                android:id="@+id/tv_nomeRestaurante"
+                android:text="Nome Restaurante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:textSize="24sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:textColor="@color/colorPrimaryText"
+                android:text="Descrição"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="24dp"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:textColor="@color/colorPrimaryText"
+                android:text="..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="6dp"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:textColor="@color/colorPrimaryText"
+                android:text="Horário de Funcionamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="24dp"
+                android:textSize="14sp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundGrey"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:columnCount="2"
+                android:rowCount="3">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:background="@color/colorAccent"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/backgroundWhite"
+                    android:text="SEG - SEX"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tv_func_sem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:text="11:00 - 14:00 / 18:00 - 23:00"
+                    android:textSize="14dp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:background="@color/colorAccent"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/backgroundWhite"
+                    android:text="SAB - DOM"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tv_func_fim_sem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:text="15:00 - 23:00"
+                    android:textSize="14sp"
+                    android:textAlignment="center"/>
+
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/backgroundWhite"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/bt_pictures"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/backgroundWhite"
+                    android:textStyle="bold"
+                    android:text="Fotos"/>
+
+                <Button
+                    android:id="@+id/bt_menu"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/backgroundWhite"
+                    android:textStyle="bold"
+                    android:text="Cardápio"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_avaliar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/backgroundWhite"
+                android:textStyle="bold"
+                android:text="AVALIAÇÕES"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+

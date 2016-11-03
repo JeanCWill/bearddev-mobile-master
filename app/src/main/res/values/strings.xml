@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Find Restaurant</string>
+    <string name="title_activity_main">Mapa</string>
+    <string name="ta_aqui">Tá Aqui!</string>
+    <string name="cade_onibus">Cadê o Ônibus?</string>
+    <string name="gps_inativo">Ative seu GPS!</string>
+    <string name="permissao_negada">Este app precisa de sua localização para funcionar!</string>
+    <string name="ok">OK</string>
+    <string name="erro_buscar_localizacao_onibus">Erro ao buscar localização do ônibus!</string>
+    <string name="erro_enviar_localizacao_onibus">Houve um erro ao enviar a localização do ônibus!</string>
+    <string name="selecione_uma_linha">Selecione uma restaurant</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="localizacao_onibus_enviada_servidor">A localização do ônibus da restaurant %1$s foi enviada para o servidor. Obrigado!</string>
+    <string name="o_onibus_esteve_aqui">O ônibus esteve aqui em %1$s</string>
+    <string name="erro_ao_comunicar_servidor">Erro ao comunicar com servidor, Erro: %1$s</string>
+    <string name="processando">Processando...</string>
+    <string name="linhas_atualizadas">As linhas foram atualizadas :D</string>
+</resources>

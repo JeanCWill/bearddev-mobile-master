@@ -1,0 +1,50 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context="com.beardev.findrestaurant.MainActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+   <!-- <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fabMenu"
+        android:layout_gravity="bottom|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        fab:fab_addButtonColorNormal="@color/colorPrimary"
+        fab:fab_icon="@drawable/ic_plus_white_24dp"
+        >
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMenuItemCade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            fab:fab_title="@string/cade_onibus"
+            fab:fab_icon="@drawable/ic_bus_white_24dp"
+            fab:fab_colorPressed="@color/wallet_holo_blue_light"
+            fab:fab_colorNormal="@color/colorPrimary" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMenuItemTaAqui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            fab:fab_title="@string/cade_onibus"
+            fab:fab_icon="@drawable/ic_checkbox_marked_circle_white_24dp"
+            fab:fab_colorPressed="@color/wallet_holo_blue_light"
+            fab:fab_colorNormal="@color/colorPrimary" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>-->
+
+
+</android.support.design.widget.CoordinatorLayout>
