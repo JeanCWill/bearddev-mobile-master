@@ -21,7 +21,7 @@ public class RestHelper {
     public RestHelper () {
 
         api = new Retrofit.Builder()
-                .baseUrl("https://find-restaurant.herokuapp.com/")
+                .baseUrl("https://find-restaurant-jeanwill.c9users.io/")
                 //.baseUrl("https://bus-2.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(RestApi.class);
@@ -66,12 +66,12 @@ public class RestHelper {
         });*/
     }
 
-    public void listPhotos(Restaurant restaurant, final GenericResultReceiver receiver) {
+    public void listPhotos(Integer restaurantId, final GenericResultReceiver receiver) {
 
         final Bundle b = new Bundle();
         receiver.send(GenericResultReceiver.RUNNING, Bundle.EMPTY);
 
-        Call<JsonArray> call = api.listPhotos(restaurant.getId());
+        Call<JsonArray> call = api.listPhotos(restaurantId);
         call.enqueue(new Callback<JsonArray>() {
 
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {

@@ -145,7 +145,6 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
         this.mGoogleApiClient.connect();
     }
 
-    @SuppressWarnings("WrongConstant")
     private void mostraSnack(String msg) {
         Snackbar snackbar = Snackbar
                 .make(coordinatorLayout, msg, Snackbar.LENGTH_INDEFINITE);
@@ -154,7 +153,7 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
         TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(Color.WHITE);
 
-        snackbar.setDuration(6000);
+        snackbar.setDuration(Snackbar.LENGTH_LONG);
         snackbar.show();
     }
 

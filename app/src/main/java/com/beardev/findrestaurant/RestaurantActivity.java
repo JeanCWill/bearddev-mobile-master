@@ -1,5 +1,6 @@
 package com.beardev.findrestaurant;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -70,14 +71,9 @@ public class RestaurantActivity extends AppCompatActivity {
         btPictures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                generiDao = new GenericDao<RestaurantRealm, Restaurant>(RestaurantRealm.class, Restaurant.class);
-//                listRestaurants = generiDao.getAllVos();
-//
-//                mReceiver = new GenericResultReceiver(new Handler());
-//                mReceiver.setReceiver(this);
-//
-//                restHelper.listRestaurants(mReceiver);
-//                startActivity(new Intent(RestaurantActivity.this, NovaAvaliacaoActivity.class));
+            Intent intent = new Intent(RestaurantActivity.this, PhotoActivity.class);
+            intent.putExtra("restaurant", idRestaurant);
+            startActivity(intent);
             }
         });
 

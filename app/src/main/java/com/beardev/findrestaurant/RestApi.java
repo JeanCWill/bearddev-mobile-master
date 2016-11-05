@@ -23,8 +23,8 @@ public interface RestApi {
     @GET("restaurants_mobile.json")
     Call<JsonArray> listRestaurants();
 
-    @GET("photos_mobile.json?restaurant_id={restaurantId}")
-    Call<JsonArray> listPhotos(@Path("restaurantId") Integer restaurantId );
+    @GET("photos_mobile.json")
+    Call<JsonArray> listPhotos(@Query("restaurant_id") Integer restaurantId );
 /*
     @GET("linhas/{codigoLinha}")
     Call<Localizacao> buscaUltimaLocalizacaoOnibus(@Path("codigoLinha") Integer codigoLinha );
