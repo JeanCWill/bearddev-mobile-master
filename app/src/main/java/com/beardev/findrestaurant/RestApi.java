@@ -25,6 +25,9 @@ public interface RestApi {
 
     @GET("photos_mobile.json")
     Call<JsonArray> listPhotos(@Query("restaurant_id") Integer restaurantId );
+
+    @GET("menus_mobile.json")
+    Call<JsonArray> listMenus(@Query("restaurant_id") Integer restaurantId );
 /*
     @GET("linhas/{codigoLinha}")
     Call<Localizacao> buscaUltimaLocalizacaoOnibus(@Path("codigoLinha") Integer codigoLinha );

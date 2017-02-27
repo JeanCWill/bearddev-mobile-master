@@ -76,7 +76,29 @@ public class RestHelper {
 
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
                 b.putSerializable("response", response.body().toString());
-                receiver.send(GenericResultReceiver.BUSCOU_LOCALIZACAO_ONIBUS, b);
+                receiver.send(GenericResultReceiver.LIST_PHOTOS, b);
+            }
+
+            @Override
+            public void onFailure(Call<JsonArray> call, Throwable t) {
+                Log.e(RestHelper.class.getSimpleName(), "Falha ao comunicar com o servidor" + t.getMessage(), t);
+                b.putSerializable("error", t);
+                receiver.send(GenericResultReceiver.ERROR, b);
+            }
+        });
+    }
+
+    public void listMenus(Integer restaurantId, final GenericResultReceiver receiver) {
+
+        final Bundle b = new Bundle();
+        receiver.send(GenericResultReceiver.RUNNING, Bundle.EMPTY);
+
+        Call<JsonArray> call = api.listMenus(restaurantId);
+        call.enqueue(new Callback<JsonArray>() {
+
+            public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                b.putSerializable("response", response.body().toString());
+                receiver.send(GenericResultReceiver.LIST_MENUS, b);
             }
 
             @Override
@@ -98,7 +120,7 @@ public class RestHelper {
 
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
                 b.putString("response", response.body().toString());
-                receiver.send(GenericResultReceiver.BUSCOU_TODAS_LINHAS, b);
+                receiver.send(GenericResultReceiver.LIST_ALL_RESTAURANTS, b);
             }
 
             @Override

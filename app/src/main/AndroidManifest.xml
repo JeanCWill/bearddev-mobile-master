@@ -43,7 +43,8 @@
         </activity>
         <activity android:name=".RestaurantActivity" />
         <activity android:name=".PhotoActivity" />
-        <activity android:name=".ImageDetailActivity"></activity>
+        <activity android:name=".ImageDetailActivity" />
+        <activity android:name=".MenuActivity" />
     </application>
 
 </manifest>

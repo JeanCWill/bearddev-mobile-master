@@ -80,7 +80,9 @@ public class RestaurantActivity extends AppCompatActivity {
         btMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(RestaurantActivity.this, NovaAvaliacaoActivity.class));
+            Intent intent = new Intent(RestaurantActivity.this, MenuActivity.class);
+            intent.putExtra("restaurant", idRestaurant);
+            startActivity(intent);
             }
         });
 

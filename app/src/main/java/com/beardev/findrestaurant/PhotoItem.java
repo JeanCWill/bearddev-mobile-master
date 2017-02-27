@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 public class PhotoItem {
     private Bitmap photo;
 
-    public PhotoItem(Bitmap photo, String s) {
+    public PhotoItem(Bitmap photo, Integer s) {
         super();
         this.photo = photo;
     }

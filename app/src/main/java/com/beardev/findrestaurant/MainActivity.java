@@ -300,7 +300,7 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
                 syncProgressDialog.show();
                 break;
 
-            case GenericResultReceiver.BUSCOU_TODAS_LINHAS:
+            case GenericResultReceiver.LIST_ALL_RESTAURANTS:
                 String json = (String) resultData.get("response");
                 generiDao.createOrUpdateFromJsonArray(json);
                 listRestaurants = generiDao.getAllVos();
@@ -317,7 +317,6 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
 
                 posicionaCamera(pegaPosicao());
                 syncProgressDialog.dismiss();
-                mostraSnack(getString(R.string.linhas_atualizadas));
                 break;
 
             case GenericResultReceiver.ERROR:

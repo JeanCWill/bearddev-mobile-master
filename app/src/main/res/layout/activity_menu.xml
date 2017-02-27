@@ -1,14 +1,14 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayoutPhoto"
+    android:id="@+id/coordinatorLayoutMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhotoActivity"
+    tools:context=".MenuActivity"
     android:background="#f0f0f0">
 
     <GridView
-        android:id="@+id/gridPhotoView"
+        android:id="@+id/gridMenuView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"

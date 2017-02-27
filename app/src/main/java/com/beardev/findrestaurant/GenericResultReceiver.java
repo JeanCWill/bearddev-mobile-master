@@ -13,8 +13,9 @@ public class GenericResultReceiver extends ResultReceiver {
 
     public static final int RUNNING = 0;
     public static final int ENVIOU_LOCALIZACAO_ONIBUS = 1;
-    public static final int BUSCOU_LOCALIZACAO_ONIBUS = 2;
-    public static final int BUSCOU_TODAS_LINHAS = 3;
+    public static final int LIST_PHOTOS = 2;
+    public static final int LIST_MENUS = 5;
+    public static final int LIST_ALL_RESTAURANTS = 3;
     public static final int ERROR = 4;
 
     private Receiver mReceiver;
