@@ -14,12 +14,6 @@ import retrofit2.http.Query;
  */
 public interface RestApi {
 
-    @GET("gerenciaPosicoesBusao")
-    Call<Localizacao> buscaUltimaLocalizacaoOnibus(@Query("codigoLinha") Integer codigoLinha );
-
-    @POST("gerenciaPosicoesBusao")
-    Call<Void> enviaLocalizacaoOnibus(@Body Onibus onibus);
-
     @GET("restaurants_mobile.json")
     Call<JsonArray> listRestaurants();
 
@@ -28,10 +22,20 @@ public interface RestApi {
 
     @GET("menus_mobile.json")
     Call<JsonArray> listMenus(@Query("restaurant_id") Integer restaurantId );
+
+    @GET("review_mobiles.json")
+    Call<JsonArray> listReviews(@Query("restaurant_id") Integer restaurantId );
+
+    @POST("review_mobiles")
+    Call<Integer> sendReview(@Query("place") Integer place, @Query("price") Integer price,
+                             @Query("attendance") Integer attendance, @Query("food") Integer food,
+                             @Query("descriprion") String descriprion, @Query("restaurant_id") Integer restaurant_id,
+                             @Query("name") String name);
+
 /*
     @GET("linhas/{codigoLinha}")
     Call<Localizacao> buscaUltimaLocalizacaoOnibus(@Path("codigoLinha") Integer codigoLinha );
 
     @POST("pontos")
-    Call<Integer> enviaLocalizacaoOnibus(@Query("lat") Double lat, @Query("lon") Double lon, @Query("linha_id") Integer id);*/
+    Call<Integer> sendReview(@Query("lat") Double lat, @Query("lon") Double lon, @Query("linha_id") Integer id);*/
 }

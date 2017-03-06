@@ -45,6 +45,8 @@
         <activity android:name=".PhotoActivity" />
         <activity android:name=".ImageDetailActivity" />
         <activity android:name=".MenuActivity" />
+        <activity android:name=".ReviewsActivity" />
+        <activity android:name=".AddReviewActivity"></activity>
     </application>
 
 </manifest>

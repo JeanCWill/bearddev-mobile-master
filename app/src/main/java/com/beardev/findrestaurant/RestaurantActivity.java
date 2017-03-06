@@ -1,13 +1,11 @@
 package com.beardev.findrestaurant;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +26,7 @@ public class RestaurantActivity extends AppCompatActivity {
     Button btPictures;
 
     Button btMenu;
-    Button btAvaliar;
+    Button btReviews;
 
     private GenericDao generiDao;
     private Integer idRestaurant;
@@ -61,10 +59,12 @@ public class RestaurantActivity extends AppCompatActivity {
 
         initDisplay();
 
-        btAvaliar.setOnClickListener(new View.OnClickListener() {
+        btReviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(RestaurantActivity.this, NovaAvaliacaoActivity.class));
+            Intent intent = new Intent(RestaurantActivity.this, ReviewsActivity.class);
+            intent.putExtra("restaurant", idRestaurant);
+            startActivity(intent);
             }
         });
 
@@ -103,7 +103,7 @@ public class RestaurantActivity extends AppCompatActivity {
 
         btPictures = (Button) findViewById(R.id.bt_pictures);
         btMenu = (Button) findViewById(R.id.bt_menu);
-        btAvaliar = (Button) findViewById(R.id.bt_avaliar);
+        btReviews = (Button) findViewById(R.id.bt_reviews);
 
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
