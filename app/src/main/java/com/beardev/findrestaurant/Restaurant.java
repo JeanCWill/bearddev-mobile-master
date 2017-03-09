@@ -22,6 +22,13 @@ public class Restaurant {
     private Date updated_at;
     private String url;
     //https://find-restaurant.herokuapp.com/restaurants/1.json
+    private Boolean open_sun;
+    private Boolean open_mon;
+    private Boolean open_tues;
+    private Boolean open_wed;
+    private Boolean open_thurs;
+    private Boolean open_fri;
+    private Boolean open_sat;
 
     public Restaurant() {
 
@@ -30,7 +37,10 @@ public class Restaurant {
     public Restaurant(int id, String companyNmae, String description,
             String cnpj, String fantasyName, String latitude,
             String longitude, Integer city_id, Integer category_id,
-            String created_at, String updated_at, String url) {
+            String created_at, String updated_at, String url,
+            Boolean open_sun, Boolean open_mon, Boolean open_tues,
+            Boolean open_wed, Boolean open_thurs, Boolean open_fri,
+            Boolean open_sat) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         this.id = id;
@@ -49,6 +59,13 @@ public class Restaurant {
             e.printStackTrace();
         }
         this.url = url;
+        this.open_sun = open_sun;
+        this.open_mon = open_mon;
+        this.open_tues = open_tues;
+        this.open_wed = open_wed;
+        this.open_thurs = open_thurs;
+        this.open_fri = open_fri;
+        this.open_sat = open_sat;
     }
 
     public Integer getId() {
@@ -110,5 +127,61 @@ public class Restaurant {
     @Override
     public String toString() {
         return getCompanyNmae();
+    }
+
+    public Boolean getOpen_sun() {
+        return open_sun;
+    }
+
+    public void setOpen_sun(Boolean open_sun) {
+        this.open_sun = open_sun;
+    }
+
+    public Boolean getOpen_mon() {
+        return open_mon;
+    }
+
+    public void setOpen_mon(Boolean open_mon) {
+        this.open_mon = open_mon;
+    }
+
+    public Boolean getOpen_tues() {
+        return open_tues;
+    }
+
+    public void setOpen_tues(Boolean open_tues) {
+        this.open_tues = open_tues;
+    }
+
+    public Boolean getOpen_wed() {
+        return open_wed;
+    }
+
+    public void setOpen_wed(Boolean open_wed) {
+        this.open_wed = open_wed;
+    }
+
+    public Boolean getOpen_thurs() {
+        return open_thurs;
+    }
+
+    public void setOpen_thurs(Boolean open_thurs) {
+        this.open_thurs = open_thurs;
+    }
+
+    public Boolean getOpen_fri() {
+        return open_fri;
+    }
+
+    public void setOpen_fri(Boolean open_fri) {
+        this.open_fri = open_fri;
+    }
+
+    public Boolean getOpen_sat() {
+        return open_sat;
+    }
+
+    public void setOpen_sat(Boolean open_sat) {
+        this.open_sat = open_sat;
     }
 }

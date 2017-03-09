@@ -18,13 +18,10 @@ import java.util.List;
 public class RestaurantActivity extends AppCompatActivity {
 
     TextView tvName;
-
     TextView tvDescription;
-    TextView tvFuncSem;
+    TextView tvDaysOperation;
 
-    TextView tvFuncFimSem;
     Button btPictures;
-
     Button btMenu;
     Button btReviews;
 
@@ -92,18 +89,61 @@ public class RestaurantActivity extends AppCompatActivity {
     private void setDisplayValues() {
         tvName.setText(restaurant.getFantasyName());
         tvDescription.setText(restaurant.getDescription());
+
+        String daysOperation = "";
+
+        if (restaurant.getOpen_sun()) {
+            daysOperation += "SEG";
+        }
+        if (restaurant.getOpen_mon()) {
+            if (!daysOperation.isEmpty()) {
+                daysOperation += " / ";
+            }
+            daysOperation += "TER";
+        }
+        if (restaurant.getOpen_tues()) {
+            if (!daysOperation.isEmpty()) {
+                daysOperation += " / ";
+            }
+            daysOperation += "QUA";
+        }
+        if (restaurant.getOpen_wed()) {
+            if (!daysOperation.isEmpty()) {
+                daysOperation += " / ";
+            }
+            daysOperation += "QUI";
+        }
+        if (restaurant.getOpen_thurs()) {
+            if (!daysOperation.isEmpty()) {
+                daysOperation += " / ";
+            }
+            daysOperation += "SEX";
+        }
+        if (restaurant.getOpen_fri()) {
+            if (!daysOperation.isEmpty()) {
+                daysOperation += " / ";
+            }
+            daysOperation += "SAB";
+        }
+        if (restaurant.getOpen_sat()) {
+            if (!daysOperation.isEmpty()) {
+                daysOperation += " / ";
+            }
+            daysOperation += "DOM";
+        }
+
+        tvDaysOperation.setText(daysOperation);
     }
 
     private void initDisplay() {
-        tvName = (TextView) findViewById(R.id.tv_nomeRestaurante);
-        tvDescription = (TextView) findViewById(R.id.tv_description);
+        tvName = (TextView) findViewById(R.id.tvRestaurantName);
+        tvDescription = (TextView) findViewById(R.id.tvDescription);
 
-        tvFuncSem = (TextView) findViewById(R.id.tv_func_sem);
-        tvFuncFimSem = (TextView) findViewById(R.id.tv_func_fim_sem);
+        tvDaysOperation = (TextView) findViewById(R.id.tvDaysOperation);
 
-        btPictures = (Button) findViewById(R.id.bt_pictures);
-        btMenu = (Button) findViewById(R.id.bt_menu);
-        btReviews = (Button) findViewById(R.id.bt_reviews);
+        btPictures = (Button) findViewById(R.id.btPictures);
+        btMenu = (Button) findViewById(R.id.btMenu);
+        btReviews = (Button) findViewById(R.id.btReviews);
 
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
