@@ -20,6 +20,7 @@ import com.beardev.findrestaurant.realm.MenuRealm;
 import com.beardev.findrestaurant.realm.ReviewRealm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReviewsActivity extends AppCompatActivity implements GenericResultReceiver.Receiver {
 
@@ -106,7 +107,13 @@ public class ReviewsActivity extends AppCompatActivity implements GenericResultR
                 String json = (String) resultData.get("response");
 
                 generiDao.createOrUpdateFromJsonArray(json);
-                listReviews = (ArrayList<Review>) generiDao.getAllVos();
+
+                listReviews.clear();
+                List<Review> listReviewsAux = (ArrayList<Review>) generiDao.getAllVos();
+                for (Review r : listReviewsAux)
+                    if (r.getRestaurant_id() == idRestaurant)
+                        listReviews.add(r);
+
                 arrayAdapterReviews = new ArrayAdapter(ReviewsActivity.this, android.R.layout.select_dialog_singlechoice, listReviews);
 
                 getData();

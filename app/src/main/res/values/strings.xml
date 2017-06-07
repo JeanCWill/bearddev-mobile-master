@@ -16,7 +16,10 @@
     <string name="processando">Processando...</string>
     <string name="linhas_atualizadas">As linhas foram atualizadas :D</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="review_enviado">Avaliação enviada</string>
+
+    <string name="erro_facebook_necessario">Para enviar uma avaliação é necessário entrar com sua conta do Facebook.</string>
+
+    <string name="facebook_app_id">706841106184999</string>
+    <string name="fb_login_protocol_scheme">fb706841106184999</string>
 </resources>

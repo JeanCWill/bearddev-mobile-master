@@ -1,0 +1,14 @@
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.login.widget.LoginButton android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        facebook:com_facebook_confirm_logout="true"
+        facebook:com_facebook_tooltip_mode="never_display"/>
+</LinearLayout>

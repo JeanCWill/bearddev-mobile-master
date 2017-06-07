@@ -22,7 +22,6 @@ public class RestHelper {
 
         api = new Retrofit.Builder()
                 .baseUrl("https://find-restaurant-jeanwill.c9users.io/")
-                //.baseUrl("https://bus-2.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(RestApi.class);
     }

@@ -1,24 +1,41 @@
 package com.beardev.findrestaurant;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.Profile;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.share.Sharer;
+
 import java.util.ArrayList;
 
 public class AddReviewActivity extends AppCompatActivity implements GenericResultReceiver.Receiver {
 
-    private TextView txtName;
     private TextView txtDescription;
     private RatingBar rbPlace;
     private RatingBar rbPrice;
@@ -58,10 +75,20 @@ public class AddReviewActivity extends AppCompatActivity implements GenericResul
 
         mReceiver = new GenericResultReceiver(new Handler());
         mReceiver.setReceiver(this);
+
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+
+        if (fragment == null) {
+            fragment = new FacebookFragment();
+            fm.beginTransaction()
+                    .add(R.id.fragment_container, fragment)
+                    .commit();
+        }
     }
 
     private void initDisplay() {
-        txtName = (TextView) findViewById(R.id.txtName);
         txtDescription = (TextView) findViewById(R.id.txtDescription);
 
         rbPlace = (RatingBar) findViewById(R.id.rbPlace);
@@ -71,11 +98,19 @@ public class AddReviewActivity extends AppCompatActivity implements GenericResul
 
         btSendReview = (Button) findViewById(R.id.btSendReview);
         btSendReview.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StringFormatMatches")
             @Override
             public void onClick(View view) {
+                Profile p = Profile.getCurrentProfile();
+
+                if (p == null) {
+                    mostraSnack(getString(R.string.erro_ao_comunicar_servidor, R.string.erro_facebook_necessario));
+                    return;
+                }
+
                 Review review = new Review();
                 review.setRestaurant_id(idRestaurant);
-                review.setName(txtName.getText().toString());
+                review.setName(p.getName());
                 review.setDescriprion(txtDescription.getText().toString());
                 review.setPlace(rbPlace.getNumStars());
                 review.setPrice(rbPrice.getNumStars());
